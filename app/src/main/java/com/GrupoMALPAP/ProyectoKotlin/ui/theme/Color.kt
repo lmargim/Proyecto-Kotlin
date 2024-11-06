@@ -1,4 +1,4 @@
-package com.GrupoMALPAP.ProyectoKotlin.ui.theme
+package com.manuelsantos.ejemplosnavigation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

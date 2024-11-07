@@ -6,10 +6,11 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 
+// FICHERO PARA DISEÑAR Y DAR FUNCIONALIDAD AL FLOATING ACTION BUTTON
 @Composable
-fun MyFloatingActionButton(navigateToDetalle: (String) -> Unit, nombre: String){
+fun MyFloatingActionButton(navigateToCasas: (String) -> Unit, nombre: String){
     FloatingActionButton(
-        onClick = {navigateToDetalle(nombre)}
+        onClick = {navigateToCasas(nombre)}
     ) {
         Icon(
             imageVector = Icons.Default.Add,

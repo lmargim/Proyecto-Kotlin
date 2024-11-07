@@ -1,4 +1,4 @@
-package com.manuelsantos.ejemplosnavigation.ui.theme.screen.homeScreen
+package com.GrupoMALPAP.ProyectoKotlin.ui.theme.screen.loginScreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,30 +16,33 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.GrupoMALPAP.ProyectoKotlin.scaffold.MyFloatingActionButton
+import androidx.compose.ui.res.stringResource
+import com.GrupoMALPAP.ProyectoKotlin.R
 import com.GrupoMALPAP.ProyectoKotlin.scaffold.MyFloatingActionButton
 
 @Composable
-fun HomeScreen(navigateToDetalle: (String) -> Unit) {
+fun LoginScreen(navigateToCasas: (String) -> Unit) {
+    // Variable para usar en el TextField
     var nombre by remember { mutableStateOf("") }
+    // TODO Borrar el Scaffold y MyFloatingActionButton y organizar el layout de la pantalla
+    // Scaffold y floatingActionButton para implementar futuramente en otra pantalla
     Scaffold(
-        floatingActionButton = { MyFloatingActionButton(navigateToDetalle, nombre) }
+        floatingActionButton = { MyFloatingActionButton(navigateToCasas, nombre) }
     ) { paddingValue ->
         Column(
             modifier = Modifier.fillMaxSize().padding(paddingValue),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.weight(1f))
-            Text("Login Screen", style = MaterialTheme.typography.displayMedium)
-            Spacer(modifier = Modifier.weight(1f))
+            // Text y TextField para introducir el nombre del usuario que se usara en las diferentes pantallas
+            Text(stringResource(id = R.string.Login), style = MaterialTheme.typography.displayMedium)
             TextField(
                 value = nombre,
                 onValueChange = { nombre = it }
             )
-            Button( onClick = { navigateToDetalle(nombre) } ) {
-                Text("Detalle")
+            // Botón para ir a la pantalla de Detalle, recibe el nombre como parámetro
+            Button( onClick = { navigateToCasas(nombre) } ) {
+                Text(stringResource(id = R.string.botonIrAMisCasas))
             }
-            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }

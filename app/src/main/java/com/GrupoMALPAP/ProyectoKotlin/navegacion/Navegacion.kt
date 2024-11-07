@@ -9,25 +9,31 @@ import androidx.navigation.navArgument
 import com.GrupoMALPAP.ProyectoKotlin.ui.theme.screen.seleccionDeHabitacionScreen.SeleccionDeHabitacionScreen
 import com.GrupoMALPAP.ProyectoKotlin.ui.theme.screen.loginScreen.LoginScreen
 
+// FICHERO EN EL QUE SE CONTROLA LA NAVEGACION ENTRE PANTALLAS
+// TODO agregar todas las pantallas que faltan
+
 @Composable
 fun Navegacion() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "login") {
+        // Pantalla de login
         composable("login") {
             LoginScreen { nombre ->
-                // Navegamos a "seleccionDeHabitaciones" con el argumento 'nombre'
+                // Navegar a "seleccionDeHabitaciones" usando el nombre como parámetro
                 navController.navigate("seleccionDeHabitaciones/$nombre")
             }
         }
+        // Pantalla de selección de habitaciones
         composable(
             route = "seleccionDeHabitaciones/{nombre}",
             arguments = listOf(navArgument("nombre") { type = NavType.StringType })
         ) { backStackEntry ->
+            // Obtener el parámetro "nombre" de los argumentos
             val nombre = backStackEntry.arguments?.getString("nombre") ?: ""
             SeleccionDeHabitacionScreen(
                 nombre = nombre,
-                onBack = { navController.popBackStack() },
-                onLogout = {
+                navigateToBack = { navController.popBackStack() },
+                navigateToLogin = {
                     navController.navigate("login") {
                         popUpTo("login") {
                             inclusive = true

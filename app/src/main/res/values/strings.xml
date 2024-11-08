@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ProyectoKotlin</string>
+    <string name="Bienvenida">Hola</string>
+    <string name="Login">Iniciar Sesion</string>
+    <string name="botonIrAMisCasas">Ir a casas</string>
 </resources>

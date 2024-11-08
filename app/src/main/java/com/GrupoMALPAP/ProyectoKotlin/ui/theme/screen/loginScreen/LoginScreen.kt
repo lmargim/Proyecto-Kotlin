@@ -1,7 +1,6 @@
 package com.GrupoMALPAP.ProyectoKotlin.ui.theme.screen.loginScreen
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button

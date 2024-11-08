@@ -1,7 +1,6 @@
 package com.GrupoMALPAP.ProyectoKotlin.ui.theme.screen.seleccionDeHabitacionScreen
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
